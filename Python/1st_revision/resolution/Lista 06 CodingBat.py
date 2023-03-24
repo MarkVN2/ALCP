@@ -107,9 +107,9 @@ def troca(s):
   if len(s) <= 1 :
     return(s)
   else:
-    b = s[-1]
-    s = s.replace(s[0],s[-1]).replace(s[-1],s[0])
-    return(s)
+    s = list(s)
+    s[0], s[-1] = s[-1], s[0]
+    return(''.join(s))
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
 def test(obtido, esperado):

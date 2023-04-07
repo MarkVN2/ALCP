@@ -18,23 +18,10 @@ def multstring(s, n):
 # string_splosion('abc') -> 'aababc'
 # string_splosion('ab') -> 'aab'
 def string_splosion(s):
-  s = list(s)
-  c = []
-  if 3 > len(s) > 1 : 
-    s.insert(0,s[0])
-  elif  5 >= len(s) >= 3 :
-    for v in s :
-      c.append(v)
-    s.insert(0,s[0])
-    s.pop(3)
-    s.extend(c)
-  elif len(s) > 5 :
-      for v in s :
-        c.append(v)
-      s.insert(0,s[0])
-      s.pop(3)
-      s.extend(c)
-  return (''.join(s))
+    sploded = ''
+    for c in range(0, len(s)):
+        sploded += s[0:c+1]
+    return sploded
 
 # C. array_count9
 # conta quantas vezes aparece o 9 numa lista nums

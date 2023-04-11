@@ -6,27 +6,31 @@
 # retorna uma string com n cópias da string original
 # multstring('Hi', 2) -> 'HiHi'
 def multstring(s, n):
-  b =[]
   x = 0
-  while x < n:
-    b.append(s)
+  l = []
+  while x < n :
+    l.append(s)
     x += 1
-  return (''.join(b))
+  return (''.join(l))
 
 # B. string_splosion
 # string_splosion('Code') -> 'CCoCodCode'
 # string_splosion('abc') -> 'aababc'
 # string_splosion('ab') -> 'aab'
 def string_splosion(s):
-  s = list(s)
-  if len(s) > 2 :
-    
-  return
+    sploded = ''
+    for c in range(0, len(s)):
+        sploded += s[0:c+1]
+    return sploded
 
 # C. array_count9
 # conta quantas vezes aparece o 9 numa lista nums
 def array_count9(nums):
-  return
+  x = 0
+  for b in nums:
+    if str(b) in '9':
+      x += 1
+  return (x)
 
 # D. array_front9
 # verifica se pelo menos um dos quatro primeiros é nove
@@ -34,22 +38,25 @@ def array_count9(nums):
 # array_front9([1, 2, 3, 4, 9]) -> False
 # array_front9([1, 2, 3, 4, 5]) -> False
 def array_front9(nums):
-  return
-
+    nums = list(nums)
+    if any(x == 9 for x in nums[:4]) :
+      return True
+    else:
+      return False
 # E. hello_name
 # seja uma string name
 # hello_name('Bob') -> 'Hello Bob!'
 # hello_name('Alice') -> 'Hello Alice!'
 # hello_name('X') -> 'Hello X!'
 def hello_name(name):
-  return
+  return(f'Hello {name}!')
 
 # F. make_tags
 # make_tags('i', 'Yay'), '<i>Yay</i>'
 # make_tags('i', 'Hello'), '<i>Hello</i>'
 # make_tags('cite', 'Yay'), '<cite>Yay</cite>'
 def make_tags(tab, word):
-  return 
+  return (f'<{tab}>{word}</{tab}>')
 
 # G. extra_end
 # seja um string s com no mínimo duas letras
@@ -58,7 +65,12 @@ def make_tags(tab, word):
 # extra_end('ab'), 'ababab'
 # extra_end('Hi'), 'HiHiHi'  
 def extra_end(s):
-  return 
+  if len(s) >= 2 :
+    s = list(s)
+    s = (s[-2] + s[-1])*3
+    return(s)
+  else: 
+    return(s)
 
 # H. first_half
 # seja uma string s
@@ -67,7 +79,13 @@ def extra_end(s):
 # first_half('HelloThere') -> 'Hello'
 # first_half('abcdef') -> 'abc'
 def first_half(s):
-  return 
+  s = list(s)
+  a = len(s)/2
+  x = 0
+  while x != a :
+    s.pop(-1)
+    x += 1
+  return (''.join(s))
 
 # I. sem_pontas
 # seja uma string s de pelo menos dois caracteres
@@ -76,7 +94,10 @@ def first_half(s):
 # without_end('python') -> 'ytho'
 # without_end('coding') -> 'odin'
 def sem_pontas(s):
-  return 
+  s = list(s)
+  s.pop(-1)
+  s.pop(0)
+  return (''.join(s))
 
 # J. roda2
 # rodar uma string s duas posições
@@ -84,7 +105,7 @@ def sem_pontas(s):
 # left2('Hello') -> 'lloHe'
 # left2('Hi') -> 'Hi'
 def roda2(s):
-  return 
+  return s[2:] + s[:2] 
 
 
 # Provided simple test() function used in main() to print

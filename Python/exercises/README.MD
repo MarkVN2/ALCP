@@ -5,48 +5,12 @@ Exercises done in  Python
 >Status of Exercise list Completion : __53%__
 
 ---
-<div style="width = 200px">
-<table>
-    <tr>
-        <td>Lista</td>
-        <td>Status</td>
-    </tr>
-    <tr>
-        <td>Lista I</td>
-        <td>✅</td>
-    </tr>
-    <tr>
-        <td>Lista II</td>
-        <td>✅</td>
-    </tr>
-    <tr>
-        <td>Lista III</td>
-        <td>✅</td>
-    </tr>
-    <tr>
-        <td>Lista IV</td>
-        <td>✅</td>
-    </tr>
-    <tr>
-        <td>Lista V</td>
-        <td>✅</td>
-    </tr>
-    <tr>
-        <td>Lista VI</td>
-        <td>✅</td>
-    </tr>
-    <tr>
-        <td>Lista VII</td>
-        <td>✅</td>
-    </tr>
-     <tr>
-        <td>Lista VII</td>
-        <td>✅</td>
-    </tr>
-     <tr>
-        <td>Lista VII</td>
-        <td>✅</td>
-    </tr>
-    
-</table>
-</div>
+| Exercise |  Status | Exercise | Status |
+|:---------:|:---------:|:---------:|:---------:|
+|Lista 01 | ✔ | Lista 02 | ✔ |
+|Lista 03 | ✔ | Lista 04 | ✔ |
+|Lista 05 | ✔ | Lista 06 | ✔ |
+|Lista 07 | ✔ | Lista 09 | ❌ |
+|Lista 10 | ❌ | Lista 11 | ❌ |
+|Lista 12 | ❌ | Lista 13 | ❌ |
+|Lista 14 | ❌ |

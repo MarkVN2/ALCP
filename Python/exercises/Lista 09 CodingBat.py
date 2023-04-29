@@ -7,7 +7,10 @@
 # first_last6([6, 1, 2, 3]) -> True
 # first_last6([3, 2, 1]) -> False
 def first_last6(nums): #
-  return
+  if nums[-1] == 6  or  nums[0] == 6 :
+    return True
+  else: 
+    return False
 
 # B. same_first_last #
 # retorna True se a lista nums
@@ -18,7 +21,10 @@ def first_last6(nums): #
 # same_first_last([1, 2, 3, 1]) -> True
 # same_first_last([1, 2, 1]) -> True
 def same_first_last(nums):
-  return 
+  if len(nums) > 0 and (nums[0] == nums[-1] or  nums[-1] == nums[0]):
+    return  True
+  else:
+    return False
 
 # C. common_end #
 # Dada duas listas a e b verifica se os dois primeiros são
@@ -28,7 +34,12 @@ def same_first_last(nums):
 # common_end([1, 2, 3], [7, 3, 2]) -> False
 # common_end([1, 2, 3], [1, 3]) -> True
 def common_end(a, b):
-  return 
+  if a[0] == b[0] :
+    return True
+  elif a[:-2:-1]== b[:-2:-1]: #This shouldn't work for this exercise but it works.
+    return True
+  else:
+    return False 
 
 # D. maior_ponta #
 # Dada uma lista não vazia, cria uma nova lista onde todos
@@ -37,14 +48,18 @@ def common_end(a, b):
 # maior_ponta([1, 2, 3]) -> [3, 3, 3]
 # maior_ponta([1, 3, 2]) -> [2, 2, 2]
 def maior_ponta(nums):
-  return
+  big = max(nums[0], nums[-1])
+  new_list = []
+  for i in nums :
+    new_list.append(big)
+  return new_list
 
 # E. sum2 #
 # Dada uma lista de inteiros de qualquer tamanho
 # retorna a soma dos dois primeiros elementos
 # se a lista tiver menos de dois elementos, soma o que for possível
 def sum2(nums):
-  return 
+  return sum(nums[:2])#I didn't know about the sum function
 
 # F. middle_way #
 # sejam duas listas de inteiros a e b
@@ -54,7 +69,10 @@ def sum2(nums):
 # middle_way([7, 7, 7], [3, 8, 0]) -> [7, 8]
 # middle_way([5, 2, 9], [1, 4, 5]) -> [2, 4]
 def middle_way(a, b):
-  return 
+  mid_a = a[1]
+  mid_b = b[1]
+  mids = [mid_a,mid_b]
+  return mids 
 
 # G. date_fashion
 # você e sua namorada(o) vão a um restaurante
@@ -71,8 +89,12 @@ def middle_way(a, b):
 # date_fashion(5, 2) -> 0
 # date_fashion(5, 5) -> 1
 def date_fashion(eu, par):
-  return
-
+  if eu <= 2 or par <=2:
+    return 0
+  if eu >= 8 or par >= 8:
+    return 2 
+  else:
+    return 1
 # H. squirrel_play
 # os esquilos na FATEC brincam quando a temperatura está entre 60 e 90
 # graus Fahreneit (são estrangeiros e o termômetro é diferente rs)
@@ -120,7 +142,16 @@ def pego_correndo(speed, is_birthday):
 # alarm_clock(5, False) -> '7:00'
 # alarm_clock(0, False) -> '10:00'
 def alarm_clock(day, vacation):
-  return
+  #this looks bad
+  if (day == 1 or day == 2 or day == 3 or day == 4 or day == 5 ) and vacation == False :
+    return '7:00'
+  elif (day == 1 or day ==2 or day ==3 or day == 4 or day == 5 )and vacation== True:
+    return '10:00'
+  elif (day == 6 or day == 0 )and vacation == False :
+    return '10:00'
+  elif( day == 6 or day == 0 )and vacation == True:
+    return 'off'
+
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.

@@ -2,7 +2,7 @@
 
 Exercises done in  Python
 
->Status of Exercise list Completion : __53%__
+>Status of Exercise list Completion : __77%__
 
 ---
 | Exercise |  Status | Exercise | Status |
@@ -11,6 +11,6 @@ Exercises done in  Python
 |Lista 03 | ✔ | Lista 04 | ✔ |
 |Lista 05 | ✔ | Lista 06 | ✔ |
 |Lista 07 | ✔ | Lista 09 | ✔ |
-|Lista 10 | ✔ | Lista 11 | ❌ |
+|Lista 10 | ✔ | Lista 11 | ✔ |
 |Lista 12 | ❌ | Lista 13 | ❌ |
 |Lista 14 | ❌ |

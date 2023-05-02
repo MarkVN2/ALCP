@@ -12,13 +12,18 @@
 # adiciona 'ing' no final
 # Caso a string já termine em 'ing', acrescentará 'ly'.
 def verbing(s):
-  return 
+  if len(s) > 3 and 'ing' not in s :
+    s = s + 'ing'
+  elif len(s) > 3:
+    s = s + 'ly'
+  return s
 
 # H. not_bad
 # Dada uma string, procura a primeira ocorrência de 'not' e 'bad'
 # Se 'bad' aparece depois de 'not' troca 'not' ... 'bad' por 'good'
 # Assim 'This dinner is not that bad!' retorna 'This dinner is good!'
 def not_bad(s):
+
   return
 
 # I. inicio_final
@@ -40,7 +45,7 @@ def zf(n):
 # K. conta 2
 # Verifique quantas vezes o dígito 2 aparece entre 0 e n-1
 # Exemplo: para n = 20 o dígito 2 aparece duas vezes entre 0 e 19
-def conta2(n):
+def conta2(n):  
   return
 
 # L. inicio em potencia de 2

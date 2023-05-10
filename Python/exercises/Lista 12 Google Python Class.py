@@ -23,8 +23,7 @@ def verbing(s):
 # Se 'bad' aparece depois de 'not' troca 'not' ... 'bad' por 'good'
 # Assim 'This dinner is not that bad!' retorna 'This dinner is good!'
 def not_bad(s):
-
-  return
+  return 
 
 # I. inicio_final
 # Divida cada string em dois pedaços.
@@ -34,19 +33,40 @@ def not_bad(s):
 # Dadas 2 strings, a e b, retorna a string
 # a_inicio + b_inicio + a_final + b_final
 def inicio_final(a, b):
-  return
-
+  a_start = a[0:int((len(a)/2))]
+  b_start = b[0:int(len(b)/2)]
+  a_end = a.replace(a_start,'').replace('n','')
+  b_end = b.replace(b_start,'')
+  if len(a+b) % 2 != 0:
+    a_start += b[0]
+    b_start = b[1:int((len(b)/2)+1)]
+  elif len(a+b) % 4 == 0:
+    a_start = a[0:int((len(a)/2)+1)]
+    b_start = b[0:int(len(b)/2)+1]
+    a_end = a.replace(a_start,'')
+    b_end = b.replace(b_start,'')
+  return a_start+b_start+a_end+b_end
 # J. zeros finais
 # Verifique quantos zeros há no final de um número inteiro positivo
 # Exemplo: 10010 tem 1 zero no fim e 908007000 possui três
 def zf(n):
-  return
-
+  count = 0
+  reversed_num = str(n)
+  reversed_num = reversed_num[::-1]
+  for i in reversed_num:
+      if i not in '0':
+        return count
+      count += 1
 # K. conta 2
 # Verifique quantas vezes o dígito 2 aparece entre 0 e n-1
 # Exemplo: para n = 20 o dígito 2 aparece duas vezes entre 0 e 19
-def conta2(n):  
-  return
+def conta2(n):
+  count_dois = 0
+  c = 0
+  for i in range(n):
+    if '2' in str(i) :
+      count_dois += 1  # NOT WORKING
+  return count_dois
 
 # L. inicio em potencia de 2
 # Dado um número inteiro positivo n retorne a primeira potência de 2

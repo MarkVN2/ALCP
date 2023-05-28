@@ -23,7 +23,11 @@ def verbing(s):
 # Se 'bad' aparece depois de 'not' troca 'not' ... 'bad' por 'good'
 # Assim 'This dinner is not that bad!' retorna 'This dinner is good!'
 def not_bad(s):
-  return 
+    notPosition = s.find("not")
+    badPosition = s.find("bad")
+    if badPosition > notPosition:
+        return s[:notPosition] + "good" + s[badPosition+3:]
+    return s
 
 # I. inicio_final
 # Divida cada string em dois pedaços.
@@ -61,19 +65,21 @@ def zf(n):
 # Verifique quantas vezes o dígito 2 aparece entre 0 e n-1
 # Exemplo: para n = 20 o dígito 2 aparece duas vezes entre 0 e 19
 def conta2(n):
-  count_dois = 0
-  c = 0
-  for i in range(n):
-    if '2' in str(i) :
-      count_dois += 1  # NOT WORKING
-  return count_dois
+    count = 0
+    for i in range(0, n):
+        count += str(i).count("2")
+    return count
 
 # L. inicio em potencia de 2
 # Dado um número inteiro positivo n retorne a primeira potência de 2
 # que tenha o início igual a n
 # Exemplo: para n = 65 retornará 16 pois 2**16 = 65536
 def inip2(n):
-  return
+    n = str(n)
+    i = 2
+    while str(pow(2, i))[:len(n)] != n:
+        i += 1
+    return i
 
 def test(obtido, esperado):
   if obtido == esperado:

@@ -9,8 +9,10 @@
 # Exercícios extras para listas
 
 # D. Dada uma lista de números retorna uma lista sem os elementos repetidos
-def remove_iguais(nums):
-  return
+def remove_iguais(nums): 
+  nums = list(dict.fromkeys(nums))
+  nums.sort()
+  return nums
 
 # E. Cripto desafio!!
 # Dada uma frase, você deve retirar todas as letras repetidas das palavras
@@ -20,7 +22,15 @@ def remove_iguais(nums):
 # depois tente ordenar as letras e montar uma string com o resultado.
 # Utilize listas auxiliares se facilitar
 def cripto(frase):
-  return 
+  c = 0
+  palavras = frase.split()
+  for i in range(len(palavras)):
+    palavras[c] =  list(dict.fromkeys(palavras[c]))
+    palavras[c].sort()
+    palavras[c] = ''.join(palavras[c])
+    c += 1
+  palavras = ' '.join(palavras)
+  return palavras
 
 # F. Derivada de um polinômio
 # Os coeficientes de um polinômio estão numa lista na ordem do seu grau.
@@ -28,7 +38,10 @@ def cripto(frase):
 # Exemplo: [3, 2, 5, 2] retorna [2, 10, 6]
 # A derivada de 3 + 2x + 5x^2 + 2x^3 é 2 + 10x + 6x^2
 def derivada(coef):
-  return
+    result= []
+    for i in range(len(coef)):
+      result.append(int(coef[i]) * i)
+    return result[1:]
 
 # G. Soma em listas invertidas
 # Colocamos os dígitos de dois números em listas ao contrário
@@ -37,8 +50,17 @@ def derivada(coef):
 # pode supor que n1 e n2 tem o mesmo número de dígitos
 # Não vale converter a lista em número para somar diretamente
 def soma(n1, n2):
-  return
-
+  #25 years trying to find what was wrong to find the sorting was wrong.
+  result = []
+  extra = 0
+  for i in range(len(n1)):
+    valor = ((int(n1[i]) + int(n2[i])) % 10) + extra
+    extra = (int(n1[i]) + int(n2[i])) // 10
+    result.append(valor)
+  if extra != 0 : 
+    result.append(extra)
+  return result
+ 
 # H. Anagrama
 # Verifique se duas palavras são anagramas,
 # isto é são uma é permutação das letras da outra
@@ -46,7 +68,22 @@ def soma(n1, n2):
 # anagrama('amor', 'ramo') = True
 # anagrama('aba', 'baba') = False
 def anagrama(s1, s2):
-  return 
+   
+  s1.split()
+  s1 = list(s1)
+  s1.sort()
+  s1 = ''.join(s1)
+  
+  
+  s2.split()
+  s2 = list(s2)
+  s2.sort()
+  s2 = ''.join(s2)
+
+  if s1 == s2 :
+    return True
+  else:
+    return False 
 
 def test(obtido, esperado):
   if obtido == esperado:
@@ -75,7 +112,7 @@ def main():
 
   print ()
   print ('soma em listas invertidas')
-  test(soma([5, 2, 3, 4], [9, 8, 7, 8]), [4, 1, 1, 3, 1])
+  test(soma([5, 2, 3, 4], [9, 8, 7, 8]), [4, 1, 1, 3, 1]) 
   test(soma([3, 1, 5], [5, 9, 2]), [8, 0, 8])
 
   print ()
